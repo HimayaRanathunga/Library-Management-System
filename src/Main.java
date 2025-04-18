@@ -1,10 +1,16 @@
+//imports the Scanner class to allow input from the user via the console
 import java.util.Scanner;
 
+//Declares the main class that contains the entry point of the program
 public class Main {
+    //The main method, where java starts executing the program
     public static void main(String[] args) {
+        //Creates an object of the Library class , can access its methods like addBook, RegisterUser, etc.
         Library library = new Library();
+        //Creates a scanner object to get input from the user through the keyboard.
         Scanner scanner = new Scanner(System.in);
 
+        //Starts an infinite loop so the menu keeps showing until the user decides to exit.
         while (true) {
             System.out.println("\n=== Library Menu ===");
             System.out.println("1. Add Book");
@@ -15,9 +21,12 @@ public class Main {
             System.out.println("6. Exit");
             System.out.print("Choose an option: ");
 
+            //Reads the user's menu choice(1 -6)
             int choice = scanner.nextInt();
-            scanner.nextLine(); // consume newline
+            //Consumes the newline character left after nextInt()
+            scanner.nextLine();
 
+            //Executes different blocks of code based on the user's choice
             switch (choice) {
                 case 1:
                     System.out.print("Enter Book ID: ");
@@ -56,11 +65,11 @@ public class Main {
                     break;
 
                 case 6:
-                    System.out.println("👋 Exiting...");
+                    System.out.println(" Exiting...");
                     return;
 
                 default:
-                    System.out.println("❌ Invalid choice.");
+                    System.out.println(" Invalid choice.");
             }
         }
     }
